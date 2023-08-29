@@ -1,10 +1,10 @@
-import Button from "./Button"
-
+import Button from "../Button/Button"
+import "./search.css"
 const Search = () => {
     return (
-    <div>
+    <div className="search">
         <input type="text" placeholder="search"/>
-        <Button text="Search" color="red"/>
+        <Button text="Search" />
     </div>
     )
 }
