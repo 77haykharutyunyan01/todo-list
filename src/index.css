@@ -1,15 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Poppins:ital,wght@0,100;1,200&family=Roboto:wght@400;700&display=swap');
 
-body{
-    margin:0;
-    padding:0;
+body {
+    margin: 0;
+    padding: 0;
     background-color: #efefef;
-    font-family:"Roboto", sans-serif;
+    font-family: "Roboto", sans-serif;
 }
-.app{
+
+.app {
     margin: 20px auto;
     padding: 0px;
-    width:300px;
-    background-color:white;
+    width: 500px;
+    background-color: white;
     border-radius: 5px;
 }
