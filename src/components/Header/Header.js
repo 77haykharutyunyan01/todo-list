@@ -1,12 +1,17 @@
 import { Component } from 'react';
 import "./header.css"
-class Header extends Component{
-    render(){
+class Header extends Component {
+
+    render() {
+        const { done, important } = this.props;
         return (
             <div className="header">
-                <h1> My Todo List <span>Done:12  Important:34</span></h1>
-                </div>
-            )
+                <h1> My Todo List
+                    <span className='header-done'>Done: {done}</span>
+                    <span className='header-done'>Important: {important}</span>
+                </h1>
+            </div>
+        )
     }
 }
 export default Header

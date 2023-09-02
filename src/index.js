@@ -17,7 +17,7 @@ const App = () => {
 
     return (
         <div className="app">
-            <Header />
+            <Header done={8} important={12}/>
             <Search />
             <TodoList items={items} />
             <AddItem />
