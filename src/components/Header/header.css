@@ -8,7 +8,12 @@
     color: #fff
 }
 .header span {
-    color: rgb(247, 239, 239);
-    font-size: 10px;
-    margin: 20px;
+    font-size: 12px;
+    font-weight: normal;
+    display: inline-block;
+    margin-left: 15px;
+}
+.header-info span{
+    display: inline-block;
+    margin-left: 5px;
 }
