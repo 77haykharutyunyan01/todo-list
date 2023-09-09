@@ -1,7 +1,6 @@
 import { Component } from 'react';
 import "./header.css"
 class Header extends Component {
-
     render() {
         const { done, important } = this.props;
         return (
