@@ -14,48 +14,64 @@ class App extends Component {
             { text: "Learn React", important: false, id: 3 },
             { text: "Learn TypeScript", important: true, id: 4 },
             { text: "Learn Node.js", important: false, id: 5 },
-        ]
+        ],
+        
     }
-    handleSearch =(text)=>{
-        this.state.items.forEach(el => {
-            if(el.text.includes(text)){
-                console.log(el); 
+    
+    handleSearch = (text) => {
+        this.setState(({ items }) => {
+            items.forEach(el => {
+                if (el.text.includes(text)) {
+                  console.log(el);
+                   
+                }
+            })
+        })
+    }
+    
+    searchImportant = () => {
+        this.setState(({items})=>{
+           const filter =  items.filter((item)=> item.important === true)
+            return {
+                items:filter
             }
-        });
+            
+        })
     }
+    
     deletItem = (id) => {
-        this.setState(({items}) => {
+        this.setState(({ items }) => {
             const idx = items.findIndex((el) => el.id === id)
             return {
-                items:[
-                    ...items.slice(0,idx),
-                    ...items.slice(idx+1)
+                items: [
+                    ...items.slice(0, idx),
+                    ...items.slice(idx + 1)
                 ]
             }
         })
-    
+
     }
     onAddItem = (text) => {
-        const id = this.state.items.length ? this.state.items[this.state.items.length - 1].id + 1:1
+        const id = this.state.items.length ? this.state.items[this.state.items.length - 1].id + 1 : 1
         const newItem = {
             text,
             important: false,
             id: id,
         }
-        this.setState ((prevState) => {
+        this.setState((prevState) => {
             return {
                 items: [...prevState.items, newItem]
             }
         })
     }
     render() {
-        
+
         return (
             <div className="app">
                 <Header done={8} important={12} />
-                <Search />
-                <TodoList items={this.state.items} deletItem={this.deletItem}/>
-                <AddItem onAddItem={this.onAddItem}/>
+                <Search handleSearch={this.handleSearch}  searchImportant={this.searchImportant}/>
+                <TodoList items={this.state.items} deletItem={this.deletItem} onDone={this.onDone}/>
+                <AddItem onAddItem={this.onAddItem} />
             </div>
         );
     }

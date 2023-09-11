@@ -12,11 +12,12 @@ class TodoList extends Component {
       important={important} 
       key={id} 
       id={id}
+      
       deletItem={deletItem}
       
       />
       );
-    });
+    })
 
     return (
       <ul className="todolist">{data}</ul>

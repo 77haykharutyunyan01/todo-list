@@ -71,7 +71,7 @@ class TodoListItem extends Component {
             {
               isError?<span className='input-error-message'>Input text is required</span>:null
             }
-            <span></span>
+           
             </div>
           ) : (
           <span className='item-text' style={textStyle} onClick={this.onDone}>
